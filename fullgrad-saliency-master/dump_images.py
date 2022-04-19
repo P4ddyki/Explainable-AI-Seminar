@@ -78,7 +78,7 @@ def compute_saliency_and_save():
             for i in range(data.size(0)):
                 filename = save_path + str( (batch_idx+1) * (i+1))
                 image = unnormalize(data[i].cpu())
-                save_saliency_map(image, saliency_map[i], filename + '_' + s + '.jpg')
+                save_saliency_map(image, saliency_map[i], filename + '_onlyHeatMap_' + s + '.jpg')
 
 
 if __name__ == "__main__":

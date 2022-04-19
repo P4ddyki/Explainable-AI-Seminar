@@ -61,7 +61,7 @@ def save_saliency_map(image, saliency_map, filename):
     color_heatmap = cv2.applyColorMap(saliency_map, cv2.COLORMAP_JET)
     
     # Combine image with heatmap
-    img_with_heatmap = np.float32(color_heatmap) + np.float32(image)
+    img_with_heatmap = np.float32(color_heatmap) #+ np.float32(image)
     img_with_heatmap = img_with_heatmap / np.max(img_with_heatmap)
 
     cv2.imwrite(filename, np.uint8(255 * img_with_heatmap))
